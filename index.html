@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/my360css.css">
+</head>
+
+<body>
+  <div class="fullpage" id="fullpage">
+    <!-- 第一屏 -->
+    <section class="section">
+      <div class="logo"></div>
+      <div class="text">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="info"></div>
+    </section>
+    <!-- 第二屏 -->
+    <section class="section">
+      <div class="shield">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="intro"></div>
+    </section>
+    <!-- 第三屏 -->
+    <section class="section">
+      <!-- 介绍 -->
+      <div class="intro"></div>
+      <!-- 圆环 -->
+      <div class="circle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- 火箭 -->
+      <div class="rocket"></div>
+    </section>
+    <!-- 第四屏输入框 -->
+    <section class="section">
+      <div class="intro"></div>
+      <div class="search">
+        <!-- 为了让网页从搜索框出来，需要套一个盒子，overflow -->
+        <div class="wrap">
+          <div class="tips"></div>
+        </div>
+        <span></span>
+      </div>
+    </section>
+    <!-- 第五屏 -->
+    <section class="section">
+      <div class="intro"></div>
+      <div class="browser">
+        <div class="bg"><span></span></div>
+        <!-- 花边框线 -->
+        <div class="line"><span></span></div>
+        <div class="leftside border"></div>
+        <div class="rightside border"></div>
+        <div class="topside border"></div>
+        <div class="bottomside border"></div>
+      </div>
+    </section>
+  </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.fullPage.min.js"></script>
+<script>
+  $('#fullpage').fullpage({
+    css3: true,
+    afterLoad: function(anchorLink, index) {
+      $('.section').removeClass('current');
+      // 延时100毫秒执行
+      setTimeout(function() {
+        $('.section').eq(index - 1).addClass('current');
+      }, 100);
+    },
+    onLeave: function(index, nextIndex, direction) {}
+  });
+</script>
+
+</html>
